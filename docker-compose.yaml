@@ -139,8 +139,8 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     restart: always
-    ports:
-      - ${NGINX_PORT}:80
+    expose:
+      - ${NGINX_PORT}
     environment:
       FILE_SIZE_LIMIT: ${FILE_SIZE_LIMIT:-5242880}
       BUCKET_NAME: ${AWS_S3_BUCKET_NAME:-uploads}
